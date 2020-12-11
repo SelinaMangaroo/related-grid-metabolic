@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import itemData from './data';
+import React, { useState } from 'react';
+import GridContextProvider from './contexts/GridContext';
+import RelatedGridList from './components/RelatedGridList';
 
 function App() {
+  const [data, setData] = useState(itemData);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GridContextProvider>
+        <RelatedGridList data={data}/>
+      </GridContextProvider>
     </div>
   );
 }
