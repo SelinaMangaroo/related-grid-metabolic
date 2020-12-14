@@ -2,12 +2,11 @@ import React, { createContext, useState } from 'react';
 export const GridContext = createContext();
 
 const GridContextProvider = (props) => {
-    const [isDetailPanelOpen, setIsDetailPanelOpen] = useState(false);
     const [currentlySelectedItem, setCurrentlySelectedItem] = useState('');
-    const [panelCount, setPanelCount] = useState(0);
+    // const [currentlySelectedRow, setCurrentlySelectedRow] = useState('');
 
     return (
-        <GridContext.Provider value={{panelCount, setPanelCount, isDetailPanelOpen, setIsDetailPanelOpen, currentlySelectedItem, setCurrentlySelectedItem}}>
+        <GridContext.Provider value={{currentlySelectedItem, setCurrentlySelectedItem}}>
             {props.children}
         </GridContext.Provider> 
     )

@@ -3,15 +3,15 @@ import { GridContext } from '../contexts/GridContext';
 import RelatedGridRow from './RelatedGridRow';
 
 const RelatedGridList = (props) => {
-    const { isDetailPanelOpen, currentlySelectedItem, panelCount } = useContext(GridContext)
-    // console.log('Context: ', isDetailPanelOpen, currentlySelectedItem, panelCount);
+    const { currentlySelectedItem } = useContext(GridContext)
+    // console.log('Context: ', currentlySelectedItem);
     return (
-        <div className="container-fluid">
+        <div className='container-fluid'> 
             {props.data.map((row, index) => {
                 return(
-                    <RelatedGridRow key={index} row={Object.keys(row)} rowItems={Object.values(row)}/>
+                    <RelatedGridRow key={index} rowItems={row}/>
                 );
-            })} 
+            })}
         </div>
     )
 }

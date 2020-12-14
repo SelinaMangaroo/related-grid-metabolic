@@ -3,15 +3,25 @@ import React, { useContext } from 'react';
 import { GridContext } from '../contexts/GridContext';
 
 const RelatedGridItem = (props) => {    
-    const { setCurrentlySelectedItem, setIsDetailPanelOpen, panelCount, setPanelCount} = useContext(GridContext)
+    const { setCurrentlySelectedItem } = useContext(GridContext)
 
-    const displayDetailPanel = (e, row, item) => {
-        setIsDetailPanelOpen(true)
-        var elem = document.getElementById(row);
-        if(elem && panelCount === 0){
-            elem.style.display = "block"
+    const displayDetailPanel = (e) => {
+
+        var acc = document.getElementsByClassName("accordion");        
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].onclick = function() {
+                hideAll();
+                this.classList.toggle("active");
+                this.nextElementSibling.classList.toggle("show");
+            }
         }
-        setPanelCount(1);
+        function hideAll() {
+            for (var i = 0; i < acc.length; i++) {
+                acc[i].classList.toggle("active", false);
+                acc[i].nextElementSibling.classList.toggle("show", false);
+            }
+        }
+
         e.preventDefault();
     }
 
@@ -20,8 +30,8 @@ const RelatedGridItem = (props) => {
     }
 
     return (
-        <div className="col" onClick={setSelectedItem}>
-            <div className="card-container" onClick={(e) => {displayDetailPanel(e, props.row)}}>
+        <div className="col" id='grid-item' onClick={setSelectedItem}>
+            <div className="card-container" onClick={(e) => {displayDetailPanel(e)}}>
                 <div className="card border-0">
                     <div
                         className="img"

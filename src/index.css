@@ -1,8 +1,5 @@
 .App {
   margin: 3cm 2cm 3cm 2cm;
-
-  /* border: 1px solid lightgrey;
-  text-align: center; */
 }
 
 .card-container {
@@ -16,14 +13,51 @@ img {
   max-height: 180px;
 }
 
-.detail-panel {
-  width: 100%;
-  height: 400px;
-  background-color: lightgrey;
-  margin: 10px;
+div.panel, .details-container {
+  /* display: none; */
+  height: 0px;
+  width: 0%;
+  /* margin: 0px; */
+  max-height: 0px;
+  overflow: hidden;
+
+  /* animation-name: slideUp;
+  animation-duration: .5s;
+  animation-timing-function: ease;	
+  visibility: hidden; */
+
+  /* opacity: 0;
+  visibility: hidden; */
+  
+
+  transition: max-height .5s ease-in-out;
 }
 
-.detail-panel-container {
+div.panel.show, .details-container {
+  /* display: block; */
+  height: 500px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-height: 500px;
+  background-color: lightgrey;
+
+  /* animation-name: slideDown;
+	animation-duration: .5s;	
+	animation-timing-function: ease;	
+  visibility: visible !important;					 */
+  
+  /* opacity: 1;
+  visibility: visible; */
+
+  transition: max-height .5s ease-in-out;
+}
+
+.grid-item {
+  cursor: pointer;
+}
+
+.details-container {
   padding-top: 2cm;
   margin: 0 auto;
   width: 280px;
@@ -31,6 +65,20 @@ img {
   text-align: center;
 }
 
-.row {
-  /* border: 1px solid lightgrey; */
+/* @keyframes slideDown {
+	0% {
+    transform: translateY(-25%);
+	}
+	100% {
+    transform: translateY(0%);
+	}		
 }
+
+@keyframes slideUp{
+  100%{
+    transform: translateY(0%);
+  }
+  0%{
+    transform: translateY(-25%);
+  }
+} */
