@@ -7,18 +7,18 @@ const RelatedGridItem = (props) => {
 
     const displayDetailPanel = (e) => {
 
-        var acc = document.getElementsByClassName("accordion");        
-        for (var i = 0; i < acc.length; i++) {
-            acc[i].onclick = function() {
+        var row = document.getElementsByClassName("row");        
+        for (var i = 0; i < row.length; i++) {
+            row[i].onclick = function() {
                 hideAll();
                 this.classList.toggle("active");
                 this.nextElementSibling.classList.toggle("show");
             }
         }
         function hideAll() {
-            for (var i = 0; i < acc.length; i++) {
-                acc[i].classList.toggle("active", false);
-                acc[i].nextElementSibling.classList.toggle("show", false);
+            for (var i = 0; i < row.length; i++) {
+                row[i].classList.toggle("active", false);
+                row[i].nextElementSibling.classList.toggle("show", false);
             }
         }
 

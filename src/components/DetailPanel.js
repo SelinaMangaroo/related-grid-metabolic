@@ -6,15 +6,13 @@ const DetailPanel = (props) => {
     const { } = useContext(GridContext)
 
     const closeDetailPanel = (e) => {
-        var acc = document.getElementsByClassName("accordion");
-        for (var i = 0; i < acc.length; i++) {
-            acc[i].classList.toggle("active", false);
-            acc[i].nextElementSibling.classList.toggle("show", false);
+        var row = document.getElementsByClassName("row");
+        for (var i = 0; i < row.length; i++) {
+            row[i].classList.toggle("active", false);
+            row[i].nextElementSibling.classList.toggle("show", false);
         }
         e.preventDefault();
     }
-
-    // style={{ paddingTop: '2cm', margin: '0 auto', width: '280px', height: '180px', textAlign: 'center'}}
     
     return (  
         <>
@@ -22,8 +20,8 @@ const DetailPanel = (props) => {
                 <span aria-hidden="true">&times;</span>
             </button>
             <div className="details-container">
-                    <div dangerouslySetInnerHTML= {{ __html: props.item.media_tag_link }}/>
-                    <div dangerouslySetInnerHTML= {{ __html: props.item.caption }}/> 
+                <div dangerouslySetInnerHTML= {{ __html: props.item.media_tag_link }}/>
+                <div dangerouslySetInnerHTML= {{ __html: props.item.caption }}/> 
             </div>
         </>
     )
