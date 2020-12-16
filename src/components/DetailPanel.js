@@ -18,7 +18,7 @@ const DetailPanel = (props) => {
             </button>
             <div className="grid-container">
                 <div className='grid-item'>
-                    <div className='item-media' dangerouslySetInnerHTML= {{ __html: props.item.media[1].url}}/>
+                    {/* <div className='item-media' dangerouslySetInnerHTML= {{ __html: props.item.media[0].url}}/> */}
                     {/* <div className='item-media'>{props.item.media[0].url}</div> */}
                 </div>
                 <div className='grid-item'>
