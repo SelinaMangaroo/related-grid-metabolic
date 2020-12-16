@@ -2,44 +2,79 @@
   margin: 3cm 2cm 3cm 2cm;
 }
 
+.row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .card-container {
   max-width: 280px;
   max-height: 400px;
   margin-bottom: 1cm;
+  border: 1px solid lightgrey;
+  cursor: pointer;
 }
 
 img {
   width: 100%;
   max-height: 180px;
+  padding: 10px;
+}
+
+.caption{
+  padding: 10px;
+  overflow-wrap: break-word;
 }
 
 div.panel{
   height: 0px;
-  background-color: lightgrey;
+
+  text-align: center;
+
   overflow: hidden;
   transition: all .5s ease-out;
 }
 
 div.panel.show {
   height: 400px;
-  background-color: lightgrey;
+
+  text-align: center;
+  padding: 20px;
+
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
   width: 100%;
   transition: all .5s ease-in;
 }
 
-.row {
-  margin-top: 20px;
+
+.grid-container { /* child of .panel */
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+
+  /* border: 1px solid lightgrey; */
+  padding: 20px;
+  margin: 0 auto;
+  width: 75%;
+  height: 100%;
+}
+
+.item-media {
+  font-size: 16pt;
+  margin: 0 auto;
+}
+
+.item-label {
+  font-size: 16pt;
   margin-bottom: 20px;
 }
 
-.grid-item {
-  cursor: pointer;
+.item-identifier {
+  font-size: 14pt;
+  font-weight: bold;
 }
 
-.details-container {
-  padding-top: 2cm;
-  margin: 0 auto;
-  width: 280px;
-  height: 180px;
-  text-align: center;
-}
+/* span{
+  font-size: 20pt;
+} */

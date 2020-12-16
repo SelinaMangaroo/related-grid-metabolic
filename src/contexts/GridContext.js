@@ -3,12 +3,12 @@ export const GridContext = createContext();
 
 const GridContextProvider = (props) => {
     const [currentlySelectedItem, setCurrentlySelectedItem] = useState('');
-    // const [currentlySelectedRow, setCurrentlySelectedRow] = useState('');
+    const [data, setData] = useState([]);
 
     return (
-        <GridContext.Provider value={{currentlySelectedItem, setCurrentlySelectedItem}}>
+        <GridContext.Provider value={{currentlySelectedItem, setCurrentlySelectedItem, data, setData}}>
             {props.children}
-        </GridContext.Provider> 
+        </GridContext.Provider>
     )
 }
 

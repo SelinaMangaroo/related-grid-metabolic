@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
-import { GridContext } from '../contexts/GridContext';
+import React from 'react';
 
 const DetailPanel = (props) => {
-
-    const { } = useContext(GridContext)
 
     const closeDetailPanel = (e) => {
         var row = document.getElementsByClassName("row");
@@ -15,15 +12,21 @@ const DetailPanel = (props) => {
     }
     
     return (  
-        <>
+        <div>
             <button type="button" className="close" aria-label="Close" onClick={(e) => {closeDetailPanel(e)}}>
                 <span aria-hidden="true">&times;</span>
             </button>
-            <div className="details-container">
-                <div dangerouslySetInnerHTML= {{ __html: props.item.media_tag_link }}/>
-                <div dangerouslySetInnerHTML= {{ __html: props.item.caption }}/> 
+            <div className="grid-container">
+                <div className='grid-item'>
+                    <div className='item-media' dangerouslySetInnerHTML= {{ __html: props.item.media[1] }}/>
+                    {/* <div className='item-media'>{props.item.media[0].url}</div> */}
+                </div>
+                <div className='grid-item'>
+                    <div className='item-label' dangerouslySetInnerHTML= {{ __html: props.item.label }}/>
+                    <div className='item-identifier' dangerouslySetInnerHTML= {{ __html: props.item.identifier }}/> 
+                </div>
             </div>
-        </>
+            </div>
     )
 }
 
